@@ -858,6 +858,29 @@
         </div>
       </footer>
     </section>
+    <script>
+      window.onload = () =>{
+      fetchApi();
+      }
+      
+      const fetchApi = ()=>{
+        fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
+      .then((resp) => resp.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+      let row = document.querySelector(".row")
+      let card = document.querySelectorAll(".back")
+      let button = document.createElement("button")
+      button.innerHTML = "click me"
+      row.appendChild(button)
+      
+      
+      }
+  
+      
+   
+      
+      </script>
     <script src="greeting.js"></script>
     <!-- FOOTER ENDS HERE -->
 
@@ -885,56 +908,7 @@
     -->
 
     <script src="app.js"></script>
-<script>
-window.onload = () =>{
-fetchApi();
-}
 
-const fetchApi = ()=>{
-  fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem",{
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "6254a924f0msh6ba4cdd3f884606p1c9ff6jsn9c093a566941"
-	}
-})
-.then((resp) => resp.json())
-.then(data => console.log(data))
-let card = document.querySelectorAll(".card")
-let button = document.createElement("button")
-button.innerHTML = "click me"
-
-
-}
-
-// .then(response => {
-// 	console.log(response) => respons.json()
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
-
-
-
-
-//    fetch("https://randomuser.me/api/")
-//   .then((resp) => resp.json())
-//   .then(data => console.log(data))
-//   let row = document.createElement("row")
-//   for(let i = 0; i<data.length; i++){
-//     const obj =data[i]
-//     let col = document.createElement("div")
-//     col.className ="col-3"
-//     col.innerHTML = `<div class="card" >
-//   <img src="${obj.picture}" class="card-img-top" alt="...">
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#" class="btn btn-primary">Go somewhere</a>
-//   </div>
-// </div>`
-//   }
-
-</script>
 
 
 
